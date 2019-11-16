@@ -9,7 +9,7 @@ RUN apt-get update && \
 
 # Install dehydrated (letsencrypt client) & dns-lexicon
 RUN git clone --depth 1 https://github.com/lukas2511/dehydrated.git /srv/dehydrated && \
-	pip install requests[security] dns-lexicon
+	pip install requests[security] dns-lexicon[plesk]
 
 # Copy over dehydrated and & cron files
 COPY ./examples/dehydrated.default.sh /srv/dehydrated/dehydrated.default.sh
